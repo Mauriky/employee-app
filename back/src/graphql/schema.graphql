@@ -1,0 +1,38 @@
+type Query{
+    ping: String!
+    employees: [Employee!]
+    findUser(name: String!,password:String!): User
+}
+
+type Mutation{
+    createEmployee(
+        name: String!,
+        lastName: String!,
+        email: String!,
+        nationality:String!,
+        phone: String!,
+        civilStatus: String!, 
+        birthday: String!
+        ): Employee
+    createUser(
+        name:String!
+        password:String! 
+    ):User
+}
+ 
+type User{
+    name:String!
+    password: String!
+}
+
+type Employee{
+    _id: ID!
+    name: String!
+    lastName: String!
+    email: String!
+    nationality: String!
+    phone: String!
+    civilStatus: String!
+    birthday: String!
+}
+
